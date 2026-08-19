@@ -6,6 +6,8 @@ from io import BytesIO
 from dotenv import load_dotenv
 from datetime import datetime, timezone
 from textblob import TextBlob
+import re
+import mediapipe as mp
 
 # Load environment variables securely
 load_dotenv()
@@ -206,7 +208,7 @@ def analyze_thumbnail(image_url):
             
         face_count = "N/A"
         try:
-            import mediapipe as mp
+            
             img_array = np.array(img_pil)
             mp_face_detection = mp.solutions.face_detection
             with mp_face_detection.FaceDetection(model_selection=1, min_detection_confidence=0.5) as face_detection:
@@ -252,3 +254,13 @@ def fetch_channel_stats(channel_name):
         stat, snip = res["items"][0].get("statistics", {}), res["items"][0].get("snippet", {})
         return {"title": snip.get("title"), "subscribers": int(stat.get("subscriberCount", 0)), "total_views": int(stat.get("viewCount", 0)), "video_count": int(stat.get("videoCount", 0)), "thumbnail": snip.get("thumbnails", {}).get("high", {}).get("url")}
     except Exception as e: return {"error": f"Request Failed: {str(e)}"}
+
+
+def extract_video_id(url):
+    """Extracts the YouTube video ID from various URL formats."""
+    # Regex to find the 11-character video ID
+    regex = r"(?:v=|\/)([0-9A-Za-z_-]{11}).*"
+    match = re.search(regex, url)
+    if match:
+        return match.group(1)
+    return None    

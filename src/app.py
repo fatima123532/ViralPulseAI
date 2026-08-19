@@ -6,7 +6,8 @@ import joblib
 from dotenv import load_dotenv
 from data_ingestion import (
     fetch_video_stats, fetch_video_sentiment, analyze_thumbnail, 
-    fetch_trending_videos, fetch_channel_stats, fetch_trending_niche_insights,fetch_real_volume_heatmap
+    fetch_trending_videos, fetch_channel_stats, fetch_trending_niche_insights,fetch_real_volume_heatmap,
+    fetch_video_stats, extract_video_id, fetch_video_sentiment
 )
 
 # Clean Architecture Imports
