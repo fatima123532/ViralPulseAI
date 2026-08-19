@@ -146,3 +146,43 @@
 .vp-acc-green { color: #00E676; font-weight: 800; }
 
 .vp-db-footer { padding: 20px; border-top: 1px solid rgba(255,255,255,0.05); display: flex; justify-content: space-between; color: #8F9BA8; font-size: 0.85rem; font-weight: 600; }
+
+
+/* --- MOBILE RESPONSIVENESS PATCH --- */
+@media screen and (max-width: 768px) {
+    /* Custom HTML flex containers ko mobile par vertical karein */
+    div[style*="display: flex; gap: 30px; align-items: stretch;"],
+    div[style*="display:flex; gap:30px; align-items:stretch;"] {
+        flex-direction: column !important;
+        gap: 15px !important;
+    }
+    
+    div[style*="display: flex; gap: 20px; flex-wrap: wrap; align-items: center;"] {
+        flex-direction: column !important;
+        text-align: center;
+    }
+
+    /* Panels aur boxes ki padding kam karein taake mobile screen par fit ayen */
+    .vp-glass-panel, .vp-insight-card, .vp-widget {
+        padding: 15px !important;
+    }
+
+    /* Headings ko mobile ke hisab se resize karein */
+    h1, h2, h3 {
+        font-size: 1.3rem !important;
+        line-height: 1.4 !important;
+    }
+
+    .vp-radar-title, .vp-db-title {
+        font-size: 1.8rem !important;
+    }
+
+    /* Tables ko scrollable banayen taake screen se bahar na jayen */
+    .vp-table-container {
+        overflow-x: auto;
+    }
+    
+    .vp-comp-table {
+        min-width: 600px; /* Forces table to scroll instead of squash */
+    }
+}

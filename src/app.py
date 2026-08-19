@@ -69,7 +69,6 @@ menu_options = [
     "📱 SHORTS EXTRACTOR",
     "⏱️ PACING ANALYZER",
     "🖼️ THUMBNAIL TESTER",
-    "📊 EXPORT REPORT",
     "👥 COMPETITOR ANALYSIS", 
     "🗄️ PREDICTION DB"
 ]
@@ -290,9 +289,7 @@ elif menu == "🖼️ THUMBNAIL TESTER":
     render_thumbnail_header()
     render_thumbnail_tester()
 
-elif menu == "📊 EXPORT REPORT":
-    render_export_header()
-    render_export_tools()             
+          
 elif menu == "🗄️ PREDICTION DB":
     render_db_header()
     

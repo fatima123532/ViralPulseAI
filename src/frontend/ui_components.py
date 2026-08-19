@@ -42,9 +42,9 @@ def render_dynamic_keywords(insights=None):
         </div>
         """, unsafe_allow_html=True)
 # --- SIDEBAR COMPONENTS ---
-# --- SIDEBAR COMPONENTS ---
+
 def render_sidebar_header():
-    # Thori extra spacing aur modern logo design taake congested na lagay
+    
     st.sidebar.markdown("""
     <div style="display:flex; align-items:center; gap:15px; margin-bottom:40px; padding-top: 10px;">
         <div style="background: linear-gradient(135deg, #FF5E3A, #FF2A2A); width: 45px; height: 45px; display: flex; align-items: center; justify-content: center; border-radius: 12px; color: white; font-weight: 900; font-size: 1.5rem; box-shadow: 0 4px 15px rgba(255, 94, 58, 0.3);">⚡</div>
@@ -56,20 +56,26 @@ def render_sidebar_header():
     """, unsafe_allow_html=True)
 
 def render_sidebar_footer():
-    # Push footer down dynamically, remove ID, update name to Fatima Irfan
+    # Pushes footer to the bottom
     st.sidebar.markdown("<div style='min-height: 35vh;'></div>", unsafe_allow_html=True) 
+    
+    # New Professional System Status Footer
     st.sidebar.markdown("""
-    <div style="border-top: 1px solid #242936; padding-top: 25px; margin-top: 20px; display: flex; align-items: center; gap: 15px;">
-        <img src="https://ui-avatars.com/api/?name=Fatima+Irfan&background=242936&color=FF5E3A&rounded=true&bold=true" width="45" height="45" style="border: 2px solid #FF5E3A; border-radius: 50%; padding: 2px;">
-        <div>
-            <div style="color:white; font-size: 1rem; font-weight: 800; letter-spacing: 0.5px;">Fatima Irfan</div>
-            <div style="color:#8F9BA8; font-size: 0.8rem; margin-top: 4px; display: flex; align-items: center; gap: 6px;">
-                <span style="display: inline-block; width: 8px; height: 8px; background: #00E676; border-radius: 50%; box-shadow: 0 0 8px #00E676;"></span> Online Session
-            </div>
+    <div style="border-top: 1px solid #242936; padding-top: 25px; margin-top: 20px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+            <span style="color: #8F9BA8; font-size: 0.75rem; font-weight: 700; letter-spacing: 1px;">SYSTEM STATUS</span>
+            <span style="background: rgba(0, 230, 118, 0.1); color: #00E676; padding: 4px 8px; border-radius: 12px; font-size: 0.65rem; font-weight: 800; border: 1px solid rgba(0, 230, 118, 0.2);">🟢 OPTIMAL</span>
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+            <span style="color: #A0ABC0; font-size: 0.75rem;">Groq LLM Engine</span>
+            <span style="color: white; font-size: 0.75rem; font-family: monospace;">Active</span>
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span style="color: #A0ABC0; font-size: 0.75rem;">Build Version</span>
+            <span style="color: #FF5E3A; font-size: 0.75rem; font-family: monospace; font-weight: 800;">v1.0.0</span>
         </div>
     </div>
     """, unsafe_allow_html=True)
-
 # --- LIVE ANALYSIS COMPONENTS ---
 def render_video_header(stats):
     st.markdown(f"""<div style="position: relative; border-radius: 12px; overflow: hidden; border: 1px solid #242936;"><img src="{stats['thumbnail']}" style="width: 100%; display: block; filter: brightness(0.8);"><div style="position: absolute; bottom: 20px; left: 20px;"><div style="background: rgba(0,0,0,0.6); backdrop-filter: blur(4px); padding: 4px 10px; border-radius: 20px; font-size: 0.7rem; color: #FF5E3A; font-weight: 800; display: inline-block; margin-bottom: 5px; border: 1px solid rgba(255,94,58,0.3);">◎ Processing Stream</div><h3 style="color: white; margin: 0; font-size: 1.2rem; text-shadow: 0 2px 4px rgba(0,0,0,0.8); line-height: 1.2;">{stats['title'][:40]}...</h3><p style="color: #A0ABC0; margin: 0; font-size: 0.85rem; font-weight: 600;">{stats['channel']}</p></div></div>""", unsafe_allow_html=True)
