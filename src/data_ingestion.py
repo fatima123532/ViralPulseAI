@@ -231,8 +231,8 @@ def analyze_thumbnail(image_url):
         return {"success": True, "brightness": brightness_label, "contrast": contrast_label, "faces_detected": face_count}
         
     # --- YEH LINE MISSING THI (Main Try ka Except) ---
-    except Exception as e:
-        return {"error": f"CV Analysis Failed: {str(e)}"}
+    except Exception as face_err: 
+            face_count = f"Err: {str(face_err)[:20]}"
 
 def fetch_trending_videos(max_results=10):
     if not YOUTUBE_API_KEY: return {"error": "YouTube API Key is missing."}
