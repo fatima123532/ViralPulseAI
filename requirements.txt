@@ -8,4 +8,5 @@ requests
 Pillow
 textblob
 scikit-learn
+opencv-python-headless
 mediapipe
