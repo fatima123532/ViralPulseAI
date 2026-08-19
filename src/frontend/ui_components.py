@@ -845,5 +845,15 @@ ViralPulse AI is an advanced algorithmic prediction and video optimization engin
 <h4 style="color: #FF5E3A; margin-bottom: 5px;">🖼️ THUMBNAIL TESTER</h4>
 <p style="color: #8F9BA8; font-size: 0.9rem; margin-top: 0;">A/B test two image URLs. The Computer Vision engine compares brightness, contrast, and facial presence to predict which thumbnail will yield a higher Click-Through Rate (CTR).</p>
 </div>
+
+<div style="margin-top: 20px;">
+<h4 style="color: #FF5E3A; margin-bottom: 5px;">👥 COMPETITORS</h4>
+<p style="color: #8F9BA8; font-size: 0.9rem; margin-top: 0;">Enter two channel names to run a head-to-head dominance map. The AI breaks down market share, content gap, and provides strategy insights on how to outpace your competition.</p>
+</div>
+
+<div style="margin-top: 20px;">
+<h4 style="color: #FF5E3A; margin-bottom: 5px;">🗄️ PREDICTION DB</h4>
+<p style="color: #8F9BA8; font-size: 0.9rem; margin-top: 0;">A historical archive of all your past video analyses. You can search, filter by virality status, and track the global accuracy of the AI engine over time.</p>
+</div>
 </div>
 """, unsafe_allow_html=True)
