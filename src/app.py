@@ -15,7 +15,7 @@ from frontend.ui_components import (
     render_video_header, render_metric_cards, render_trend_section, 
     render_viral_alert, render_cv_widget, render_nlp_widget,
     render_radar_header, render_real_volume_heatmap, render_dynamic_keywords, render_predicted_format,
-    render_hook_generator_header, render_hook_results,generate_llm_hooks,
+    render_hook_generator_header, render_hook_results,generate_llm_hooks,render_documentation,
     render_competitor_header, render_market_share_chart, render_strategy_insights, render_content_gap_table,
     render_db_header, render_db_filters, render_db_table,
     render_analyze_deeper,render_seo_header,render_seo_results,render_shorts_header,render_shorts_results,render_pacing_header,render_pacing_results,
@@ -70,7 +70,8 @@ menu_options = [
     "⏱️ PACING ANALYZER",
     "🖼️ THUMBNAIL TESTER",
     "👥 COMPETITOR ANALYSIS", 
-    "🗄️ PREDICTION DB"
+    "🗄️ PREDICTION DB",
+    "📖 DOCUMENTATION"
 ]
 st.sidebar.markdown("""
     <style>
@@ -327,3 +328,5 @@ elif menu == "🗄️ PREDICTION DB":
             
     # 3. Render the filtered and cleaned table
     render_db_table(df_history)
+elif menu == "📖 DOCUMENTATION":
+    render_documentation()  
