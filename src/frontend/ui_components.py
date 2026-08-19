@@ -60,21 +60,6 @@ def render_sidebar_footer():
     st.sidebar.markdown("<div style='min-height: 35vh;'></div>", unsafe_allow_html=True) 
     st.sidebar.markdown("""
     <div style="border-top: 1px solid #242936; padding-top: 25px; margin-top: 20px;">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
-            <span style="color: #8F9BA8; font-size: 0.75rem; font-weight: 700; letter-spacing: 1px;">SUPPORT & RESOURCES</span>
-        </div>
-        <div style="display: flex; flex-direction: column; gap: 12px;">
-            <div style="color: #A0ABC0; font-size: 0.85rem; display: flex; align-items: center; gap: 8px;"><span>📖</span> See Documentation tab</div>
-            <div style="color: #A0ABC0; font-size: 0.85rem; display: flex; align-items: center; gap: 8px; cursor: pointer;"><span>🐛</span> Report an Issue</div>
-            <div style="color: #A0ABC0; font-size: 0.85rem; display: flex; align-items: center; gap: 8px; cursor: pointer;"><span>🔑</span> API Settings</div>
-        </div>
-        <div style="margin-top: 20px; color: #4A5568; font-size: 0.7rem; font-family: monospace;">ViralPulse Engine v1.0.0</div>
-    </div>
-    """, unsafe_allow_html=True)
-    
-    # New Professional System Status Footer
-    st.sidebar.markdown("""
-    <div style="border-top: 1px solid #242936; padding-top: 25px; margin-top: 20px;">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
             <span style="color: #8F9BA8; font-size: 0.75rem; font-weight: 700; letter-spacing: 1px;">SYSTEM STATUS</span>
             <span style="background: rgba(0, 230, 118, 0.1); color: #00E676; padding: 4px 8px; border-radius: 12px; font-size: 0.65rem; font-weight: 800; border: 1px solid rgba(0, 230, 118, 0.2);">🟢 OPTIMAL</span>
@@ -818,46 +803,47 @@ def render_thumbnail_tester():
                 </div>
                 """, unsafe_allow_html=True)
     st.markdown("</div>", unsafe_allow_html=True)   
+
 def render_documentation():
     st.markdown("""
-    <div class="vp-hg-header">
-        <h1 class="vp-hg-title">📖 System Documentation</h1>
-        <p class="vp-hg-sub">Complete guide on how to use the ViralPulse AI Predictive Engine.</p>
-    </div>
-    
-    <div class="vp-glass-panel" style="margin-top: 20px;">
-        <h2 style="color: white; font-size: 1.5rem; margin-top: 0;">System Overview</h2>
-        <p style="color: #A0ABC0; line-height: 1.6;">
-            ViralPulse AI is an advanced algorithmic prediction and video optimization engine. It uses real-time YouTube API telemetry, Computer Vision (CV), and Groq LLMs to reverse-engineer virality and help creators optimize their content before and after publishing.
-        </p>
-        
-        <hr style="border-color: #242936; margin: 30px 0;">
-        
-        <h2 style="color: white; font-size: 1.5rem;">How to Use the Tools</h2>
-        
-        <div style="margin-top: 20px;">
-            <h4 style="color: #FF5E3A; margin-bottom: 5px;">((•)) LIVE ANALYSIS</h4>
-            <p style="color: #8F9BA8; font-size: 0.9rem; margin-top: 0;">Paste any YouTube video URL to predict its virality. The AI analyzes engagement velocity, thumbnail brightness/contrast, and viewer sentiment to score the video.</p>
-        </div>
-        
-        <div style="margin-top: 20px;">
-            <h4 style="color: #FF5E3A; margin-bottom: 5px;">🎯 TRENDING RADAR</h4>
-            <p style="color: #8F9BA8; font-size: 0.9rem; margin-top: 0;">Check real-time category volumes and rising keywords. Enter a video topic to instantly generate an AI script structure perfectly synced with current algorithm trends.</p>
-        </div>
-        
-        <div style="margin-top: 20px;">
-            <h4 style="color: #FF5E3A; margin-bottom: 5px;">⚡ VIRAL HOOKS & 🚀 AI SEO</h4>
-            <p style="color: #8F9BA8; font-size: 0.9rem; margin-top: 0;">Use these tools to generate high-retention opening hooks and rank-optimized metadata (Titles, Descriptions, Tags, Chapters) for your videos.</p>
-        </div>
-        
-        <div style="margin-top: 20px;">
-            <h4 style="color: #FF5E3A; margin-bottom: 5px;">⏱️ PACING ANALYZER & 📱 SHORTS EXTRACTOR</h4>
-            <p style="color: #8F9BA8; font-size: 0.9rem; margin-top: 0;">Paste your full script. The pacing tool will identify where viewers might drop off. The Shorts tool will extract the 3 most viral 60-second vertical video concepts from it.</p>
-        </div>
-        
-        <div style="margin-top: 20px;">
-            <h4 style="color: #FF5E3A; margin-bottom: 5px;">🖼️ THUMBNAIL TESTER</h4>
-            <p style="color: #8F9BA8; font-size: 0.9rem; margin-top: 0;">A/B test two image URLs. The Computer Vision engine compares brightness, contrast, and facial presence to predict which thumbnail will yield a higher Click-Through Rate (CTR).</p>
-        </div>
-    </div>
-    """, unsafe_allow_html=True)    
+<div class="vp-hg-header">
+<h1 class="vp-hg-title">📖 System Documentation</h1>
+<p class="vp-hg-sub">Complete guide on how to use the ViralPulse AI Predictive Engine.</p>
+</div>
+
+<div class="vp-glass-panel" style="margin-top: 20px;">
+<h2 style="color: white; font-size: 1.5rem; margin-top: 0;">System Overview</h2>
+<p style="color: #A0ABC0; line-height: 1.6;">
+ViralPulse AI is an advanced algorithmic prediction and video optimization engine. It uses real-time YouTube API telemetry, Computer Vision (CV), and Groq LLMs to reverse-engineer virality and help creators optimize their content before and after publishing.
+</p>
+
+<hr style="border-color: #242936; margin: 30px 0;">
+
+<h2 style="color: white; font-size: 1.5rem;">How to Use the Tools</h2>
+
+<div style="margin-top: 20px;">
+<h4 style="color: #FF5E3A; margin-bottom: 5px;">((•)) LIVE ANALYSIS</h4>
+<p style="color: #8F9BA8; font-size: 0.9rem; margin-top: 0;">Paste any YouTube video URL to predict its virality. The AI analyzes engagement velocity, thumbnail brightness/contrast, and viewer sentiment to score the video.</p>
+</div>
+
+<div style="margin-top: 20px;">
+<h4 style="color: #FF5E3A; margin-bottom: 5px;">🎯 TRENDING RADAR</h4>
+<p style="color: #8F9BA8; font-size: 0.9rem; margin-top: 0;">Check real-time category volumes and rising keywords. Enter a video topic to instantly generate an AI script structure perfectly synced with current algorithm trends.</p>
+</div>
+
+<div style="margin-top: 20px;">
+<h4 style="color: #FF5E3A; margin-bottom: 5px;">⚡ VIRAL HOOKS & 🚀 AI SEO</h4>
+<p style="color: #8F9BA8; font-size: 0.9rem; margin-top: 0;">Use these tools to generate high-retention opening hooks and rank-optimized metadata (Titles, Descriptions, Tags, Chapters) for your videos.</p>
+</div>
+
+<div style="margin-top: 20px;">
+<h4 style="color: #FF5E3A; margin-bottom: 5px;">⏱️ PACING ANALYZER & 📱 SHORTS EXTRACTOR</h4>
+<p style="color: #8F9BA8; font-size: 0.9rem; margin-top: 0;">Paste your full script. The pacing tool will identify where viewers might drop off. The Shorts tool will extract the 3 most viral 60-second vertical video concepts from it.</p>
+</div>
+
+<div style="margin-top: 20px;">
+<h4 style="color: #FF5E3A; margin-bottom: 5px;">🖼️ THUMBNAIL TESTER</h4>
+<p style="color: #8F9BA8; font-size: 0.9rem; margin-top: 0;">A/B test two image URLs. The Computer Vision engine compares brightness, contrast, and facial presence to predict which thumbnail will yield a higher Click-Through Rate (CTR).</p>
+</div>
+</div>
+""", unsafe_allow_html=True)
