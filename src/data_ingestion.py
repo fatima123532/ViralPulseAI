@@ -8,6 +8,7 @@ from datetime import datetime, timezone
 from textblob import TextBlob
 import re
 import mediapipe as mp
+import cv2
 
 # Load environment variables securely
 load_dotenv()
@@ -191,6 +192,8 @@ def fetch_video_sentiment(video_id, max_comments=50):
 def analyze_thumbnail(image_url):
     if not image_url:
         return {"error": "No thumbnail URL provided."}
+    
+    # 1. MAIN TRY BLOCK
     try:
         req = requests.get(image_url, timeout=10)
         img_pil = Image.open(BytesIO(req.content)).convert('RGB')
@@ -207,18 +210,27 @@ def analyze_thumbnail(image_url):
         else: contrast_label = "Flat/Washed Out 🌫️"
             
         face_count = "N/A"
+        
+        # 2. INNER TRY BLOCK FOR FACE DETECTION
         try:
             
             img_array = np.array(img_pil)
-            mp_face_detection = mp.solutions.face_detection
-            with mp_face_detection.FaceDetection(model_selection=1, min_detection_confidence=0.5) as face_detection:
-                results = face_detection.process(img_array)
-                if results.detections: face_count = len(results.detections)
-                else: face_count = 0
-        except ImportError: face_count = "Lib Missing"
-        except Exception as face_err: face_count = f"Err: {str(face_err)[:10]}"
+            bgr_image = cv2.cvtColor(img_array, cv2.COLOR_RGB2BGR)
+            gray_image = cv2.cvtColor(bgr_image, cv2.COLOR_BGR2GRAY)
+            
+            cascade_path = cv2.data.haarcascades + 'haarcascade_frontalface_default.xml'
+            face_cascade = cv2.CascadeClassifier(cascade_path)
+            
+            faces = face_cascade.detectMultiScale(gray_image, scaleFactor=1.1, minNeighbors=5, minSize=(30, 30))
+            face_count = len(faces)
+            
+        except Exception as face_err: 
+            face_count = "Err: OpenCV"
         
+        # --- YEH LINE MISSING THI (Main Try ka Return) ---
         return {"success": True, "brightness": brightness_label, "contrast": contrast_label, "faces_detected": face_count}
+        
+    # --- YEH LINE MISSING THI (Main Try ka Except) ---
     except Exception as e:
         return {"error": f"CV Analysis Failed: {str(e)}"}
 
